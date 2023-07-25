@@ -407,7 +407,7 @@ function suaNhanVien() {
         alert("Cập nhật thành công.");
         //
         window.location.href =
-          "/frontend/manager_pharmacy/quanlynhanvien.html";
+          "quanlynhanvien.html";
       } else {
         // Xử lý khi có lỗi xảy ra
         alert("Lưu thất bại.");

@@ -107,7 +107,7 @@ if(flag==true){
         .then((response) => {
           if (response.ok) {
             alert("Đã lưu thành công.");
-            window.location.href = "/frontend/manager_pharmacy/quanlynhanvien.html";
+            window.location.href = "quanlynhanvien.html";
           } else {
             // Xử lý khi có lỗi xảy ra
             alert("Lưu thất bại.");

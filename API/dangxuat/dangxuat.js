@@ -10,7 +10,7 @@ function hienForm() {
 function logout(){
     if (confirm("Bạn có chắc chắn muốn đăng xuất ?")) {
       sessionStorage.clear();
-      window.location.href ="/frontend/manager_pharmacy/dangnhap.html";
+      window.location.href ="dangnhap.html";
   } else {
     location.reload();
   }
