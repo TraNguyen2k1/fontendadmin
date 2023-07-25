@@ -8,7 +8,7 @@ function dangnhap() {
     matKhau: matkhauInput,
   };
   console.log(JSON.stringify(data));
-  fetch(`http://localhost:3000/qlnt/auth/login`, {
+  fetch(`http://backend-flame-nine.vercel.app/qlnt/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
