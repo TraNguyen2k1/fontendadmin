@@ -1,4 +1,4 @@
-//require('dotenv').config();
+require('dotenv').config();
 function dangnhap() {
   
   const sdtInput = document.getElementById("sdt").value;
@@ -8,7 +8,7 @@ function dangnhap() {
     matKhau: matkhauInput,
   };
   console.log(JSON.stringify(data));
-  fetch(`https://backend-flame-nine.vercel.app/qlnt/auth/login`, {
+  fetch(`https://${process.env.HOST}/qlnt/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
