@@ -1,3 +1,4 @@
+import moduleName from './module.js';
 require('dotenv').config();
 function dangnhap() {
   const host = process.env.HOST;
@@ -61,3 +62,4 @@ if (!sessionStorage.getItem('tk')) {
   window.location.href = "dangnhap.html";
 }
 }
+export default moduleName;
