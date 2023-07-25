@@ -1,4 +1,6 @@
+require('dotenv').config();
 function dangnhap() {
+  
   const sdtInput = document.getElementById("sdt").value;
   const matkhauInput = document.getElementById("matkhau").value;
   const data = {
@@ -6,7 +8,7 @@ function dangnhap() {
     matKhau: matkhauInput,
   };
   console.log(JSON.stringify(data));
-  fetch("http://localhost:3000/qlnt/auth/login", {
+  fetch(`http://process.env.HOST/qlnt/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
