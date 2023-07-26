@@ -97,7 +97,7 @@ if(flag==true){
       };
       console.log(JSON.stringify(data));
       // Gửi dữ liệu bằng AJAX
-      fetch("http://localhost:3000/qlnt/nhanvien/addNV", {
+      fetch("https://backend-flame-nine.vercel.app/qlnt/nhanvien/addNV", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

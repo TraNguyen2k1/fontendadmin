@@ -6,7 +6,7 @@ function hienDonVi() {
 
   const queryString = new URLSearchParams(params).toString();
 
-  fetch(`http://localhost:3000/qlnt/dvt/?${queryString}`)
+  fetch(`https://backend-flame-nine.vercel.app/qlnt/dvt/?${queryString}`)
     .then(response => response.json())
     .then(data => {
       const select = document.getElementById('donvi');

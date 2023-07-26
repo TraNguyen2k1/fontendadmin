@@ -6,7 +6,7 @@ function hienNhomThuoc() {
 
    const queryString = new URLSearchParams(params).toString();
 
-   fetch(`http://localhost:3000/qlnt/nhomthuoc/?${queryString}`)
+   fetch(`https://backend-flame-nine.vercel.app/qlnt/nhomthuoc/?${queryString}`)
       .then(response => response.json())
       .then(data => {
          const list = document.getElementById('myULtennhomthuoc');
@@ -64,7 +64,7 @@ hienNhomThuoc();
 
 
 
-fetch('http://localhost:3000/qlnt/nhomthuoc/')
+fetch('https://backend-flame-nine.vercel.app/qlnt/nhomthuoc/')
   .then(response => response.json())
   .then(data => {
     const listItems = data;

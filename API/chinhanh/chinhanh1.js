@@ -8,7 +8,7 @@ function hienChiNhanh1() {
   
     const queryString = new URLSearchParams(params).toString();
   
-    fetch(`http://localhost:3000/qlnt/chinhanh/?${queryString}`)
+    fetch(`https://backend-flame-nine.vercel.app/qlnt/chinhanh/?${queryString}`)
       .then(response => response.json())
       .then(data => {
         const select = document.getElementById('tenchinhanh1');

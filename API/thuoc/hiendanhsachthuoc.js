@@ -1,116 +1,169 @@
 function hienThiTatCa() {
-  const params = {
-    maSKU: "aaaa",
-    tenNhom: "dau hong",
-    tenNhaSanXuat: "Công ty Cổ phần Dược Hậu Giang",
-    tenDonVi: "Chai",
-    tenBietDuoc: "aaaaa",
-    soDangKy: "324565",
-    hoatChat: "sssss",
-    donGia: 20000,
-    giaBan: 20000,
-    hanSuDung: 12,
-  };
+  // const params = {
+  //   maSKU: "aaaa",
+  //   tenNhom: "dau hong",
+  //   tenNhaSanXuat: "Công ty Cổ phần Dược Hậu Giang",
+  //   tenDonVi: "Chai",
+  //   tenBietDuoc: "aaaaa",
+  //   soDangKy: "324565",
+  //   hoatChat: "sssss",
+  //   donGia: 20000,
+  //   giaBan: 20000,
+  //   hanSuDung: 12,
+  // };
 
-  const queryString = new URLSearchParams(params).toString();
+  // const queryString = new URLSearchParams(params).toString();
 
-  fetch(`http://localhost:3000/qlnt/thuoc/?${queryString}`)
-    .then((response) => response.json())
-    .then((data) => {
-      const tableBody = document.getElementById("table-body");
-      tableBody.innerHTML = "";
+  // fetch(`https://backend-flame-nine.vercel.app/qlnt/thuoc/?${queryString}`)
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     const tableBody = document.getElementById("table-body");
+  //     tableBody.innerHTML = "";
 
-      for (let i = 0; i < data.length; i++) {
-        const row = document.createElement("tr");
+  //     for (let i = 0; i < data.length; i++) {
+  //       const row = document.createElement("tr");
 
-        const maSKUCell = document.createElement("td");
-        maSKUCell.innerText = data[i].maSKU;
-        row.appendChild(maSKUCell);
+  //       const maSKUCell = document.createElement("td");
+  //       maSKUCell.innerText = data[i].maSKU;
+  //       row.appendChild(maSKUCell);
 
-        const maNhomCell = document.createElement("td");
-        maNhomCell.innerText = data[i].tenNhom;
-        row.appendChild(maNhomCell);
+  //       const maNhomCell = document.createElement("td");
+  //       maNhomCell.innerText = data[i].tenNhom;
+  //       row.appendChild(maNhomCell);
 
-        const maNhaSanXuatCell = document.createElement("td");
-        maNhaSanXuatCell.innerText = data[i].tenNhaSanXuat;
-        row.appendChild(maNhaSanXuatCell);
+  //       const maNhaSanXuatCell = document.createElement("td");
+  //       maNhaSanXuatCell.innerText = data[i].tenNhaSanXuat;
+  //       row.appendChild(maNhaSanXuatCell);
 
-        const maDonViCell = document.createElement("td");
-        maDonViCell.innerText = data[i].tenDonVi;
-        row.appendChild(maDonViCell);
+  //       const maDonViCell = document.createElement("td");
+  //       maDonViCell.innerText = data[i].tenDonVi;
+  //       row.appendChild(maDonViCell);
 
-        const tenBietDuocCell = document.createElement("td");
-        tenBietDuocCell.innerText = data[i].tenBietDuoc;
-        row.appendChild(tenBietDuocCell);
+  //       const tenBietDuocCell = document.createElement("td");
+  //       tenBietDuocCell.innerText = data[i].tenBietDuoc;
+  //       row.appendChild(tenBietDuocCell);
 
-        const soDangKyCell = document.createElement("td");
-        soDangKyCell.innerText = data[i].soDangKy;
-        row.appendChild(soDangKyCell);
+  //       const soDangKyCell = document.createElement("td");
+  //       soDangKyCell.innerText = data[i].soDangKy;
+  //       row.appendChild(soDangKyCell);
 
-        const hoatChatCell = document.createElement("td");
-        hoatChatCell.innerText = data[i].hoatChat;
-        row.appendChild(hoatChatCell);
+  //       const hoatChatCell = document.createElement("td");
+  //       hoatChatCell.innerText = data[i].hoatChat;
+  //       row.appendChild(hoatChatCell);
 
-        const donGiaCell = document.createElement("td");
-        donGiaCell.innerText = data[i].donGia;
-        row.appendChild(donGiaCell);
+  //       const donGiaCell = document.createElement("td");
+  //       donGiaCell.innerText = data[i].donGia;
+  //       row.appendChild(donGiaCell);
 
-        const giaBanCell = document.createElement("td");
-        giaBanCell.innerText = data[i].giaBan;
-        row.appendChild(giaBanCell);
+  //       const giaBanCell = document.createElement("td");
+  //       giaBanCell.innerText = data[i].giaBan;
+  //       row.appendChild(giaBanCell);
 
-        const hanSuDungCell = document.createElement("td");
-        hanSuDungCell.innerText = data[i].hanSuDung;
-        row.appendChild(hanSuDungCell);
-        tableBody.appendChild(row);
-        if ($.fn.DataTable.isDataTable("#example")) {
-          // Nếu đã khởi tạo rồi thì hủy DataTable
-          $("#example").DataTable().destroy();
-        } else {
+  //       const hanSuDungCell = document.createElement("td");
+  //       hanSuDungCell.innerText = data[i].hanSuDung;
+  //       row.appendChild(hanSuDungCell);
+  //       tableBody.appendChild(row);
+  //       if ($.fn.DataTable.isDataTable("#example")) {
+  //         // Nếu đã khởi tạo rồi thì hủy DataTable
+  //         $("#example").DataTable().destroy();
+  //       } else {
 
 
-          $("#example").DataTable().destroy();
-          // Khởi tạo DataTables sau khi Ajax hoàn tất
-          $("#example").DataTable({
+  //         $("#example").DataTable().destroy();
+  //         // Khởi tạo DataTables sau khi Ajax hoàn tất
+  //         $("#example").DataTable({
          
-            select: true,
-            editable: true,
-            dom: "Bfrtip",
-            buttons: [
-              {
-                extend: "copyHtml5",
-                exportOptions: {
-                  columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                },
-              },
-              {
-                extend: "csvHtml5",
-                exportOptions: {
-                  columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                },
-              },
-              {
-                extend: "excelHtml5",
-                exportOptions: {
-                  columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                },
-              },
-              {
-                extend: "pdfHtml5",
-                exportOptions: {
-                  columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                },
-              },
-              {
-                extend: "print",
-                exportOptions: {
-                  columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-                },
-              },
-            ],
-            data: data,
-            columns: [
-              { data: "maSKU" },
+  //           select: true,
+  //           editable: true,
+  //           dom: "Bfrtip",
+  //           buttons: [
+  //             {
+  //               extend: "copyHtml5",
+  //               exportOptions: {
+  //                 columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  //               },
+  //             },
+  //             {
+  //               extend: "csvHtml5",
+  //               exportOptions: {
+  //                 columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  //               },
+  //             },
+  //             {
+  //               extend: "excelHtml5",
+  //               exportOptions: {
+  //                 columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  //               },
+  //             },
+  //             {
+  //               extend: "pdfHtml5",
+  //               exportOptions: {
+  //                 columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  //               },
+  //             },
+  //             {
+  //               extend: "print",
+  //               exportOptions: {
+  //                 columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  //               },
+  //             },
+  //           ],
+  //           data: data,
+  //           columns: [
+  //             { data: "maSKU" },
+  //             { data: "tenNhom" },
+  //             { data: "tenNhaSanXuat" },
+  //             { data: "tenDonVi" },
+  //             { data: "tenBietDuoc" },
+  //             { data: "soDangKy" },
+  //             { data: "hoatChat" },
+  //             { data: "donGia" },
+  //             { data: "giaBan" },
+  //             { data: "hanSuDung" },
+  //           ],
+  //           columnDefs: [
+  //             {
+  //               targets: "_all",
+  //               defaultContent: "-",
+  //             },
+  //           ],
+  //           language: {
+  //             emptyTable: "Không có dữ liệu trong danh sách",
+  //             zeroRecords: "Không tìm thấy dữ liệu",
+  //             info: "Hiển thị _START_ đến _END_ của _TOTAL_ dòng",
+  //             infoEmpty: "Hiển thị 0 đến 0 của 0 bản ghi",
+  //             infoFiltered: "(lọc từ _MAX_ tổng số bản ghi)",
+  //             search: "",
+  //             lengthMenu: "Hiển thị _MENU_ dòng",
+  //             paginate: {
+  //               first: "Đầu tiên",
+  //               last: "Cuối cùng",
+  //               next: "Tiếp theo",
+  //               previous: "Trước đó",
+  //             },
+  //           },
+  //           // ẩn đi tùy chọn "Hiển thị x dòng"
+  //           lengthMenu: [8],
+  //           pageLength: 8,
+      
+            
+  //         });
+  //       }
+  //     }
+
+
+  //   })
+  //   .catch((error) => console.log(error));
+
+
+    $(document).ready(function () {
+      $("#example").DataTable({
+        ajax: {
+          url: "https://backend-flame-nine.vercel.app/qlnt/thuoc/",
+          dataSrc: "",
+        },
+        columns: [
+          { data: "maSKU" },
               { data: "tenNhom" },
               { data: "tenNhaSanXuat" },
               { data: "tenDonVi" },
@@ -120,40 +173,56 @@ function hienThiTatCa() {
               { data: "donGia" },
               { data: "giaBan" },
               { data: "hanSuDung" },
-            ],
-            columnDefs: [
-              {
-                targets: "_all",
-                defaultContent: "-",
-              },
-            ],
-            language: {
-              emptyTable: "Không có dữ liệu trong danh sách",
-              zeroRecords: "Không tìm thấy dữ liệu",
-              info: "Hiển thị _START_ đến _END_ của _TOTAL_ dòng",
-              infoEmpty: "Hiển thị 0 đến 0 của 0 bản ghi",
-              infoFiltered: "(lọc từ _MAX_ tổng số bản ghi)",
-              search: "",
-              lengthMenu: "Hiển thị _MENU_ dòng",
-              paginate: {
-                first: "Đầu tiên",
-                last: "Cuối cùng",
-                next: "Tiếp theo",
-                previous: "Trước đó",
-              },
+        ],
+        dom: "Bfrtip",
+        style: {
+          width: "100%",
+        },
+        buttons: [
+          {
+            extend: "copyHtml5",
+            exportOptions: {
+              columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
             },
-            // ẩn đi tùy chọn "Hiển thị x dòng"
-            lengthMenu: [8],
-            pageLength: 8,
-      
-            
-          });
-        }
-      }
-
-
-    })
-    .catch((error) => console.log(error));
+          },
+          {
+            extend: "excelHtml5",
+            exportOptions: {
+              columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            },
+          },
+          {
+            extend: "pdfHtml5",
+            exportOptions: {
+              columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            },
+          },
+          {
+            extend: "print",
+            exportOptions: {
+              columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            },
+          },
+        ],
+        "language": {
+          "emptyTable": "Không có dữ liệu trong danh sách",
+          "zeroRecords": "Không tìm thấy dữ liệu",
+          "info": "Hiển thị _START_ đến _END_ của _TOTAL_ dòng",
+          "infoEmpty": "Hiển thị 0 đến 0 của 0 bản ghi",
+          "infoFiltered": "(lọc từ _MAX_ tổng số bản ghi)",
+          "search": "",
+          "lengthMenu": "Hiển thị _MENU_ dòng",
+          "paginate": {
+            "first": "Đầu tiên",
+            "last": "Cuối cùng",
+            "next": "Tiếp theo",
+            "previous": "Trước đó"
+          }
+        },
+        "lengthMenu": [8],
+        "pageLength": 10, // ẩn đi tùy chọn "Hiển thị x dòng"
+      });
+    });
 }
 
 function timTenThuoc() {
@@ -161,7 +230,7 @@ function timTenThuoc() {
   const value = document.getElementById("tim").value;
   console.log(value);
   // Gọi API để lấy dữ liệu
-  fetch("http://localhost:3000/qlnt/thuoc/findThuoc", {
+  fetch("https://backend-flame-nine.vercel.app/qlnt/thuoc/findThuoc", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

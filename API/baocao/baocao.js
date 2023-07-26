@@ -3,7 +3,7 @@ function hienThiBaoCao() {
   $(document).ready(function () {
     $("#example").DataTable({
       ajax: {
-        url: "http://localhost:3000/qlnt/baocao/",
+        url: "https://backend-flame-nine.vercel.app/qlnt/baocao/",
         dataSrc: "",
       },
       columns: [
@@ -228,7 +228,7 @@ function locNgay() {
   };
   console.log(JSON.stringify(data));
   // Gửi dữ liệu bằng AJAX
-  fetch("http://localhost:3000/qlnt/baocao/ngay/", {
+  fetch("https://backend-flame-nine.vercel.app/qlnt/baocao/ngay/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -6,7 +6,7 @@ function hienNSX() {
 
    const queryString = new URLSearchParams(params).toString();
 
-   fetch(`http://localhost:3000/qlnt/nsx/?${queryString}`)
+   fetch(`https://backend-flame-nine.vercel.app/qlnt/nsx/?${queryString}`)
       .then(response => response.json())
       .then(data => {
          const list = document.getElementById('myUL');
@@ -62,8 +62,8 @@ function chonNSX() {
 hienNSX();
 
 
-// Sử dụng phương thức fetch để tải danh sách các nhà sản xuất từ địa chỉ URL 'http://localhost:3000/qlnt/nsx/'
-fetch('http://localhost:3000/qlnt/nsx/')
+// Sử dụng phương thức fetch để tải danh sách các nhà sản xuất từ địa chỉ URL 'https://backend-flame-nine.vercel.app/qlnt/nsx/'
+fetch('https://backend-flame-nine.vercel.app/qlnt/nsx/')
   // Chuyển đổi kết quả trả về thành một đối tượng JavaScript bằng phương thức json()
   .then(response => response.json())
   // Lưu trữ danh sách các nhà sản xuất vào biến listItems

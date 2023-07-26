@@ -9,14 +9,14 @@
     color: red;
 }
 
-#example1 {
+#examples {
     font-size  : 16px;
     /* tăng kích thước chữ lên gấp đôi */
     font-family: Arial, sans-serif;
     /* đổi sang phông chữ Arial hoặc các phông chữ không có serif khác */
 }
 
-#example1 th a {
+#examples th a {
     font-size      : 18px;
     /* tăng kích thước chữ cho các liên kết lên 18px */
     font-weight    : bold;
@@ -27,7 +27,7 @@
     /* thay đổi màu chữ của các liên kết */
 }
 
-#example1 th a:hover {
+#examples th a:hover {
     color: #0066cc;
     /* thay đổi màu chữ của các liên kết khi di chuột qua */
 }
@@ -168,7 +168,7 @@
     /* Ẩn nội dung mặc định */
 
     /* chỉnh khoảng cách từ menu tới table */
-
+    padding: 15px 20px;
     margin-top: 2%;
 }
 

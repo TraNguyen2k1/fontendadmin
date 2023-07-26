@@ -3,7 +3,7 @@ function hienThiTatCa() {
   $(document).ready(function () {
     let table = $("#example-nhanvien").DataTable({
       ajax: {
-        url: "http://localhost:3000/qlnt/nhanvien/",
+        url: "https://backend-flame-nine.vercel.app/qlnt/nhanvien/",
         dataSrc: "",
       },
       columns: [
@@ -394,7 +394,7 @@ function suaNhanVien() {
   };
   console.log(data);
   // Gửi dữ liệu bằng AJAX
-  fetch("http://localhost:3000/qlnt/nhanvien/update", {
+  fetch("https://backend-flame-nine.vercel.app/qlnt/nhanvien/update", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

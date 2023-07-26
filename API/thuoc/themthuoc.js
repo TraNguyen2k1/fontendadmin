@@ -117,7 +117,7 @@ function addListProduct() {
     });
   
     // Gửi dữ liệu bằng AJAX
-    fetch('http://localhost:3000/qlnt/thuoc/addDS', {
+    fetch('https://backend-flame-nine.vercel.app/qlnt/thuoc/addDS', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

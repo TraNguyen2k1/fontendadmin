@@ -2,7 +2,7 @@ function hienThiDSKhoThuoc() {
   $(document).ready(function () {
     $("#example").DataTable({
       ajax: {
-        url: "http://localhost:3000/qlnt/kho/",
+        url: "https://backend-flame-nine.vercel.app/qlnt/kho/",
         dataSrc: "",
       },
       columns: [

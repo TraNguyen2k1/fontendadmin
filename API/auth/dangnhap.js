@@ -1,7 +1,5 @@
-import moduleName from './module.js';
-require('dotenv').config();
 function dangnhap() {
-  const host = process.env.HOST;
+  
   const sdtInput = document.getElementById("sdt").value;
   const matkhauInput = document.getElementById("matkhau").value;
   const data = {
@@ -9,7 +7,7 @@ function dangnhap() {
     matKhau: matkhauInput,
   };
   console.log(JSON.stringify(data));
-  fetch(`https://${host}/qlnt/auth/login`, {
+  fetch(`https://backend-flame-nine.vercel.app/qlnt/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -62,4 +60,3 @@ if (!sessionStorage.getItem('tk')) {
   window.location.href = "dangnhap.html";
 }
 }
-export default moduleName;
