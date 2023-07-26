@@ -403,7 +403,7 @@ section {
 }
 
 /* cái nút tìm kiếm trong header  */
-.search-form .search-input {
+/* .search-form .search-input {
     width           : 400px;
     height          : 60px;
     background-color: #fff5;
@@ -433,7 +433,7 @@ section {
     background-color: transparent;
     border          : none;
     outline         : none;
-}
+} */
 
 /* kết thúc cái nút tìm kiếm trong header */
 /* hết cái header */

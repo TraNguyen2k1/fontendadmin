@@ -48,7 +48,6 @@
                 <div id="search-btn" class="fas fa-search"></div>
                 <div id="user-btn" class="fas fa-user"></div>
                 <div id="toggle-btn" class="fas fa-sun"></div>
-
             </div>
             <div class="profile">
                 <img src="images/Nhathuocpt.png" class="image" alt="">
@@ -146,6 +145,7 @@
                         <label for="tennhomthuoc">Tên nhóm thuốc</label>
                         <input type="type" id="tennhomthuoc" name="tennhomthuoc" onkeyup="timNhomThuoc()"
                             autocomplete="off" required>
+                            <div id="mesnhomthuoc" name="err"></div>
                         <ul id="myULtennhomthuoc">
 
                         </ul>
@@ -154,6 +154,7 @@
                         <label for="tennhasanxuat">Tên nhà sản xuất</label>
                         <input type="type" id="tennhasanxuat" name="tennhasanxuat" onkeyup="timNSX()" autocomplete="off"
                             required>
+                            <div id="mestennhasanxuat" name="err"></div>
                         <ul id="myUL">
 
                         </ul>
@@ -181,16 +182,19 @@
                         <label for="giaban">Đơn giá</label>
                         <input type="text" id="dongia" name="dongia" autocomplete="off" required
                             oninput="this.value=this.value.replace(/[^0-9\,]/g,'').replace(/(\,,)/g,',')">
+                            <div id="mesdongia" name="err"></div>
                     </div>
                     <div class="form-item">
                         <label for="giaban">Giá bán</label>
                         <input type="text" id="giaban" name="giaban" autocomplete="off" required
                             oninput="this.value=this.value.replace(/[^0-9\,]/g,'').replace(/(\,,)/g,',')">
+                            <div id="mesgiaban" name="err"></div>
                     </div>
                     <div class="form-item">
                         <label for="hsd">HSD</label>
                         <input type="text" id="hsd" name="hsd" autocomplete="off" required
                             oninput="this.value=this.value.replace(/[^0-9\,]/g,'').replace(/(\,,)/g,',')"  maxlength="2">
+                            <div id="meshsd" name="err"></div>
                     </div>
                 </form>
                 <div class="submitbutton">
